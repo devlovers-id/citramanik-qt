@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'citramanik_progressbar.ui'
+# Form implementation generated from reading ui file 'dev-ui/citramanik_progressbar.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -11,14 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from citramanik.ui.citramanik_resources_rc import *
 
-
 class Ui_CitramanikProgressBar(object):
     def setupUi(self, CitramanikProgressBar):
         CitramanikProgressBar.setObjectName("CitramanikProgressBar")
         CitramanikProgressBar.resize(400, 151)
         self.topFrame = QtWidgets.QFrame(CitramanikProgressBar)
         self.topFrame.setGeometry(QtCore.QRect(0, 0, 400, 41))
-        self.topFrame.setStyleSheet("background-color: #b42b6f;\n"
+        self.topFrame.setStyleSheet("background-color: rgba(234, 56, 159, 0.7);\n"
 "background-image: url(:/image/imgs/img-bg-sections_progressBar.png);")
         self.topFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.topFrame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -33,13 +32,13 @@ class Ui_CitramanikProgressBar(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_exporting.setFont(font)
-        self.label_exporting.setStyleSheet("color: #e5e8eb; background:none;")
+        self.label_exporting.setStyleSheet("background:none;")
         self.label_exporting.setObjectName("label_exporting")
         self.wrapper_exporting.addWidget(self.label_exporting)
         self.verticalLayout_6.addLayout(self.wrapper_exporting)
         self.bottom_frame = QtWidgets.QFrame(CitramanikProgressBar)
         self.bottom_frame.setGeometry(QtCore.QRect(0, 40, 400, 111))
-        self.bottom_frame.setStyleSheet("background-color: #e5e8eb;")
+        self.bottom_frame.setStyleSheet("")
         self.bottom_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.bottom_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.bottom_frame.setObjectName("bottom_frame")
@@ -51,10 +50,9 @@ class Ui_CitramanikProgressBar(object):
         self.wrapper_progresscontent.addItem(spacerItem)
         self.progress_bar = QtWidgets.QProgressBar(self.bottom_frame)
         self.progress_bar.setMinimumSize(QtCore.QSize(0, 24))
-        self.progress_bar.setStyleSheet("QProgressBar{text-align:center;color: rgb(53, 53, 53)}\n"
+        self.progress_bar.setStyleSheet("QProgressBar{text-align:center;}\n"
 "\n"
 "QProgressBar::chunk{\n"
-"background-color: #b42b6f;\n"
 "}")
         self.progress_bar.setProperty("value", 0)
         self.progress_bar.setObjectName("progress_bar")
@@ -69,7 +67,7 @@ class Ui_CitramanikProgressBar(object):
         font.setBold(False)
         font.setWeight(50)
         self.label_currentfile.setFont(font)
-        self.label_currentfile.setStyleSheet("color: #b42b6f;")
+        self.label_currentfile.setStyleSheet("")
         self.label_currentfile.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_currentfile.setObjectName("label_currentfile")
         self.wrapper_statuscancel.addWidget(self.label_currentfile)
@@ -78,16 +76,12 @@ class Ui_CitramanikProgressBar(object):
         self.btn_cancel = QtWidgets.QPushButton(self.bottom_frame)
         self.btn_cancel.setMinimumSize(QtCore.QSize(80, 28))
         self.btn_cancel.setStyleSheet("QPushButton{\n"
-"color: #fff;\n"
 "background-color: #b42b6f;\n"
-"border:0px solid;\n"
 "border-radius: 2px;\n"
 "}\n"
 "\n"
 "QPushButton::hover{;\n"
-"color: #fff;\n"
 "background-color: rgb(206, 49, 128);\n"
-"border:none;\n"
 "}")
         self.btn_cancel.setObjectName("btn_cancel")
         self.wrapper_statuscancel.addWidget(self.btn_cancel)

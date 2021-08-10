@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #b42b6f;
+    <string notr="true">background-color: rgba(234, 56, 159, 0.7);
 background-image: url(:/image/imgs/img-bg-sections_progressBar.png);</string>
    </property>
    <property name="frameShape">
@@ -45,7 +45,7 @@ background-image: url(:/image/imgs/img-bg-sections_progressBar.png);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #e5e8eb; background:none;</string>
+         <string notr="true">background:none;</string>
         </property>
         <property name="text">
          <string>Exporting...</string>
@@ -66,7 +66,7 @@ background-image: url(:/image/imgs/img-bg-sections_progressBar.png);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #e5e8eb;</string>
+    <string notr="true"/>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -102,10 +102,9 @@ background-image: url(:/image/imgs/img-bg-sections_progressBar.png);</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QProgressBar{text-align:center;color: rgb(53, 53, 53)}
+         <string notr="true">QProgressBar{text-align:center;}
 
 QProgressBar::chunk{
-background-color: #b42b6f;
 }</string>
         </property>
         <property name="value">
@@ -138,7 +137,7 @@ background-color: #b42b6f;
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: #b42b6f;</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Preparing...</string>
@@ -171,16 +170,12 @@ background-color: #b42b6f;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton{
-color: #fff;
 background-color: #b42b6f;
-border:0px solid;
 border-radius: 2px;
 }
 
 QPushButton::hover{;
-color: #fff;
 background-color: rgb(206, 49, 128);
-border:none;
 }</string>
           </property>
           <property name="text">
