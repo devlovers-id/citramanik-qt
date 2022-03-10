@@ -1,6 +1,6 @@
 import os
 
-from lxml import etree
+from lxml.etree import XMLParser, parse
 
 NSS = {
     'sodipodi': 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
@@ -21,7 +21,8 @@ class SVGParser(object):
             raise FileNotFoundError
         # parse svg input file
         try:
-            self.document = etree.parse(inputfile)
+            _p = XMLParser(huge_tree=True)
+            self.document = parse(inputfile, parser=_p)
         except Exception as e:
             print(e.with_traceback())
 
