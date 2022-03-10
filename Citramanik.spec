@@ -43,7 +43,7 @@ if sys.platform == "darwin":
         exe,
         name='citramanik-qt.app',
         author='Devlovers ID',
-        version='1.3.1',
+        version='1.3.2',
         bundle_identifier='id.devlovers.citramanik-qt',
         info_plist={
 	    'NSPrincipalClass': 'NSApplication',
