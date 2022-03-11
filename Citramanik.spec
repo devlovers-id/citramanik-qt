@@ -53,6 +53,32 @@ if sys.platform == "darwin":
         },
         icon='icons/Icon.icns'
     )
+	
+elif sys.platform == "win32":
+	exe = EXE(pyz,
+		  a.scripts, 
+		  [],
+		  exclude_binaries=True,
+		  name='Citramanik-Qt',
+		  debug=False,
+		  bootloader_ignore_signals=False,
+		  strip=False,
+		  upx=True,
+		  console=False,
+		  disable_windowed_traceback=False,
+		  target_arch=None,
+		  codesign_identity=None,
+		  entitlements_file=None ,  icon='icons/Icon.ico')
+	coll = COLLECT(exe,
+			a.binaries,
+			a.zipfiles,
+			a.datas, 
+			strip=False,
+			upx=True,
+			upx_exclude=[],
+			name='Citramanik-Qt')
+
+
 else:
     exe = EXE(pyz,
             a.scripts,

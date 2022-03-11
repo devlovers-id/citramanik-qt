@@ -58,6 +58,9 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
         # initialize gui data
         self.__initialize_gui()
         self.__tmp_exportsdir = None
+        
+        if os.name == "nt":
+            self.checkbox_flatpak.hide()
 
         self.updater = CitramanikUpdater(self)
 
@@ -73,6 +76,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
         self.use_flatpak = False
 
         self.options.pageOnly = False
+    
 
         self.checkbox_flatpak.toggled.connect(self.__on_flatpak_toggled)
 
