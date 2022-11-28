@@ -8,7 +8,7 @@ import traceback
 from PIL import Image
 from shutil import copy2
 
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt6.QtCore import QThread, pyqtSignal
 from citramanik.handler.error import CitraManikCancelException
 from citramanik.utils.sorter import natural_sort
 from citramanik.utils.timer import CitramanikTimer

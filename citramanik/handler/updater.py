@@ -1,7 +1,7 @@
 import sys
 import json
 
-from PyQt5 import QtCore, QtWidgets, QtNetwork
+from PyQt6 import QtCore, QtWidgets, QtNetwork
 from citramanik import __download_url__
 
 class CitramanikUpdater(QtCore.QObject):

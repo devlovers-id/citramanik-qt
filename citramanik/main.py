@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtWidgets
+from PyQt6 import QtWidgets
 
 from citramanik.handler.gui import CitramanikWindow
 

@@ -21,8 +21,8 @@ def get_versions():
     import sys
     import platform
 
-    import PyQt5
-    import PyQt5.QtCore
+    import PyQt6
+    import PyQt6.QtCore
 
     if not sys.platform == 'darwin':
         system = platform.system()
@@ -32,8 +32,8 @@ def get_versions():
     return {
         "citramanik": __version__,
         "release_date": __release_date__,
-        "pyqt_version": PyQt5.QtCore.PYQT_VERSION_STR,
-        "qt_version": PyQt5.QtCore.QT_VERSION_STR,
+        "pyqt_version": PyQt6.QtCore.PYQT_VERSION_STR,
+        "qt_version": PyQt6.QtCore.QT_VERSION_STR,
         "system": system,
         "sysrelease": platform.release()
     }

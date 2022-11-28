@@ -6,7 +6,7 @@ import tempfile
 import traceback
 
 
-from PyQt5.QtWidgets import QMainWindow, QMessageBox, QFileDialog
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QFileDialog
 
 from citramanik.ui.Ui_Citramanik import Ui_Citramanik
 from citramanik.ui.Ui_ProgressDialog import Ui_CitramanikProgressBar

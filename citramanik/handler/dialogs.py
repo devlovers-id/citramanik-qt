@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QDialog, QMessageBox, QScrollArea, QGridLayout, QLabel
-from PyQt5.QtCore import pyqtSignal
+from PyQt6.QtWidgets import QDialog, QMessageBox, QScrollArea, QGridLayout, QLabel
+from PyQt6.QtCore import pyqtSignal
 from random import choice
 
 from citramanik.ui.Ui_ProgressDialog import Ui_CitramanikProgressBar

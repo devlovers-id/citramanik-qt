@@ -2,5 +2,5 @@ appdirs==1.4.4
 lxml==4.6.3
 Pillow==8.1.2
 pyinstaller==4.5.1
-PyQt5==5.12.3
-PyQt5-sip==12.9.0
+PyQt6
+PyQt6-sip
