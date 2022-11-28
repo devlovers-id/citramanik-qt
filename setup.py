@@ -103,7 +103,7 @@ install_requires = [
     "appdirs==1.4.4",
     "lxml==4.6.3",
     "Pillow==8.1.2",
-    "PyQt6",
+    "PyQt6==6.4.0",
 ]
 
 setup_args['install_requires'] = install_requires
