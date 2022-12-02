@@ -8,7 +8,7 @@ def main():
     main_window = CitramanikWindow()
     main_window.show()
     main_window.updater.retrieve_latest_version()
-    app.exec_()
+    app.exec()
 
 if __name__ == "__main__":
     main()

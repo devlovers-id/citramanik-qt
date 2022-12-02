@@ -5,7 +5,7 @@ from random import choice
 from citramanik.ui.Ui_ProgressDialog import Ui_CitramanikProgressBar
 
 
-def show_message(msg_type=QMessageBox.Information, msg="Info", scrollable=False):
+def show_message(msg_type=QMessageBox.information, msg="Info", scrollable=False):
     if scrollable:
         box = ScrollableMessageBox(msg_type, "Report", msg)
     else:
