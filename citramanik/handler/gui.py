@@ -216,7 +216,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
 
     def __on_btn_browse_outputdir(self):
         ''' Browse output directory button click handler '''
-        output_dir = QFileDialog.getExistingDirectory(self, "Select Output Directory", "", QFileDialog.ShowDirsOnly)
+        output_dir = QFileDialog.getExistingDirectory(self, "Select Output Directory", "", QFileDialog.Option.ShowDirsOnly)
         if output_dir:
             self.options.outputdir = output_dir
             self.field_exportdir.setText(output_dir)
