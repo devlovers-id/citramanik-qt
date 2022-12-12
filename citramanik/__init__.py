@@ -1,11 +1,11 @@
 
 # use semantic versioning (major, minor, patch)
-version_info = ( 1, 3, 2 )
+version_info = ( 1, 6, "dev01" )
 
 __author__ =  "Devlovers ID"
 __title__ = "citramanik-qt"
 __version__ = ".".join(map(str, version_info))
-__release_date__ = "2022-03-10"
+__release_date__ = "2022-12-12"
 __download_url__ = "https://getcitramanik.dev-is.my.id"
 __website_url__ = "https://citramanik.dev-is.my.id"
 __donate_url__ = "https://support.dev-is.my.id"
