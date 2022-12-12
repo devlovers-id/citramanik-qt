@@ -31,7 +31,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
         # check inkscape from console argument
         if not self.options.inkscape_path:
             if not self.appconfigs.get_inkscape_path():
-                show_message(QMessageBox.Critical, "Inkscape not detected, if you're using AppImage/Portable version of Inkscape, please configure it on the Settings tab")
+                show_message(QMessageBox.Icon.Critical, "Inkscape not detected, if you're using AppImage/Portable version of Inkscape, please configure it on the Settings tab")
                 # print("No Internal Inkscape")
                 self.options.inkscape_path = ""
             else:
@@ -40,7 +40,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
         # check ghostscript from console argument
         if not self.options.ghostscript_path:
             if not self.appconfigs.get_ghostscript_path():
-                show_message(QMessageBox.Warning, "Ghostscript not detected, please configure it in the Settings tab, otherwise you can't do BOOKLET/PDF/JPG/EPS exports with CMYK mode")
+                show_message(QMessageBox.Icon.Warning, "Ghostscript not detected, please configure it in the Settings tab, otherwise you can't do BOOKLET/PDF/JPG/EPS exports with CMYK mode")
                 # print("No Internal Ghostscript")
                 self.options.ghostscript_path = ""
             else:
@@ -49,7 +49,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
         # check pngquant from console argument
         if not self.options.pngquant_path:
             if not self.appconfigs.get_pngquant_path():
-                show_message(QMessageBox.Warning, "Pngquant not detected! Please configure it in the Settings tab, otherwise you can't use PNG optimized feature. \n\nGet Pngquant from your distro repository, or download at https://pngquant.org/")
+                show_message(QMessageBox.Icon.Warning, "Pngquant not detected! Please configure it in the Settings tab, otherwise you can't use PNG optimized feature. \n\nGet Pngquant from your distro repository, or download at https://pngquant.org/")
                 # print("No Internal Pngquant")
                 self.options.pngquant_path = ""
             else:
@@ -171,7 +171,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
 
     def __on_btn_extratools_clicked(self):
         ''' Extra tools button click handler '''
-        show_message(QMessageBox.Information, "Whoops! Coming Soon :*")
+        show_message(QMessageBox.Icon.Information, "Whoops! Coming Soon :*")
         return
 
     def __on_btn_opensvg_clicked(self):
@@ -189,7 +189,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
                 self.options.inkscape_path = opened_file
                 self.field_inkscape_path.setText(opened_file)
             else:
-                show_message(QMessageBox.Critical, "Invalid Inkscape Executable File")
+                show_message(QMessageBox.Icon.Critical, "Invalid Inkscape Executable File")
                 self.btn_browse_inkscape.clicked.emit()
 
     def __on_btn_browse_ghostscriptpath_clicked(self):
@@ -200,7 +200,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
                 self.options.ghostscript_path = opened_file
                 self.field_ghostscript_path.setText(opened_file)
             else:
-                show_message(QMessageBox.Critical, "Invalid Ghostscript Executable File")
+                show_message(QMessageBox.Icon.Critical, "Invalid Ghostscript Executable File")
                 self.btn_browse_ghostscript.clicked.emit()
 
     def __on_btn_browse_pngquantpath_clicked(self):
@@ -211,7 +211,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
                 self.options.pngquant_path = opened_file
                 self.field_pngquant_path.setText(opened_file)
             else:
-                show_message(QMessageBox.Critical, "Invalid Pngquant Executable File")
+                show_message(QMessageBox.Icon.Critical, "Invalid Pngquant Executable File")
                 self.btn_browse_pngquant.clicked.emit()
 
     def __on_btn_browse_outputdir(self):
@@ -234,19 +234,19 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
                 return
 
         if not self.options.inputfile:
-            show_message(QMessageBox.Critical, "No SVG specified!")
+            show_message(QMessageBox.Icon.Critical, "No SVG specified!")
             return
 
         # check if inputfile is exists
         if not os.path.exists(self.options.inputfile):
-            show_message(QMessageBox.Critical, f"SVG File: {self.options.inputfile} is not exist, export aborted!")
+            show_message(QMessageBox.Icon.Critical, f"SVG File: {self.options.inputfile} is not exist, export aborted!")
             return
 
         if not self.options.pattern and not self.options.pageOnly:
-            show_message(QMessageBox.Critical, "Id pattern not specified, export aborted!")
+            show_message(QMessageBox.Icon.Critical, "Id pattern not specified, export aborted!")
             return
         if not self.__check_options():
-            show_message(QMessageBox.Critical, "You're not selecting any of export choices, export aborted!")
+            show_message(QMessageBox.Icon.Critical, "You're not selecting any of export choices, export aborted!")
             return
 
         if self.options.with_zip:
@@ -274,7 +274,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
             num_of_ids = len(self.ids_to_process)
 
             if num_of_ids < 1 :
-                show_message(QMessageBox.Critical, f"Cannot find any object with id pattern {self.options.pattern}. Aborting export...")
+                show_message(QMessageBox.Icon.Critical, f"Cannot find any object with id pattern {self.options.pattern}. Aborting export...")
                 return
 
             self.process_to_finished = 0
@@ -376,7 +376,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
             mainexports.start()
 
         except:
-            show_message(QMessageBox.Critical, traceback.format_exc())
+            show_message(QMessageBox.Icon.Critical, traceback.format_exc())
 
     def __prepare_export_data(self):
         ''' Prepare export information from user. '''
@@ -395,7 +395,6 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
         self.options.with_jpg = self.checkBox_JPG.isChecked()
         self.options.is_progressive = self.checkBox_JPGProgressive.isChecked()
         self.options.optimize_png = self.checkBox_Optimize_PNG.isChecked()
-        
 
         if self.options.with_jpg and not self.options.with_png:
             self.options.only_jpg = True
@@ -447,7 +446,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
             self.options.inkscape_path = self.field_inkscape_path.text()
 
         if self.options.inkscape_path == "":
-            show_message(QMessageBox.Critical, "Please set Inkscape path first. It usually in /usr/bin/inkscape for Linux or C:/Program File/Inkscape/Inkscape.exe for Windows")
+            show_message(QMessageBox.Icon.Critical, "Please set Inkscape path first. It usually in /usr/bin/inkscape for Linux or C:/Program File/Inkscape/Inkscape.exe for Windows")
             self.Settings.setFocus(True)
             return False
         res = b""
@@ -463,13 +462,13 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
                 else:
                     res = subprocess.check_output([self.options.inkscape_path,"--version"], stderr=subprocess.STDOUT)
         except FileNotFoundError:
-            show_message(QMessageBox.Critical, "Specified path doesn't exists! Please provide valid Inkscape path. It usually in /usr/bin/inkscape for Linux or C:/Program File/Inkscape/Inkscape.exe for Windows")
+            show_message(QMessageBox.Icon.Critical, "Specified path doesn't exists! Please provide valid Inkscape path. It usually in /usr/bin/inkscape for Linux or C:/Program File/Inkscape/Inkscape.exe for Windows")
             self.Settings.setFocus(True)
             return False
         if "Inkscape" in res.decode("utf-8"):
             return True
         # check again if inkscape is found, otherwise turn exception
-        show_message(QMessageBox.Critical, "Invalid Inkscape Binary! Please provide valid Inkscape path. It usually in /usr/bin/inkscape for Linux or C:/Program File/Inkscape/Inkscape.exe for Windows")
+        show_message(QMessageBox.Icon.Critical, "Invalid Inkscape Binary! Please provide valid Inkscape path. It usually in /usr/bin/inkscape for Linux or C:/Program File/Inkscape/Inkscape.exe for Windows")
         self.Settings.setFocus(True)
         return False
 
@@ -479,7 +478,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
             self.options.ghostscript_path = self.field_ghostscript_path.text()
 
         if self.options.ghostscript_path == "":
-            show_message(QMessageBox.Critical, "Please set Ghostscript path first. It usually in /usr/bin/gs for Linux or C:/Program Files/Ghostscript/bin/gswin32c.exe for Windows")
+            show_message(QMessageBox.Icon.Critical, "Please set Ghostscript path first. It usually in /usr/bin/gs for Linux or C:/Program Files/Ghostscript/bin/gswin32c.exe for Windows")
             self.tabWidget.setCurrentIndex(self.tabWidget.indexOf(self.Settings))
             return False
         res = b""
@@ -491,13 +490,13 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
             else:
                 res = subprocess.check_output([self.options.ghostscript_path,"--help"], stderr=subprocess.STDOUT)
         except FileNotFoundError:
-            show_message(QMessageBox.Critical, "Specified path doesn't exists! Please provide valid Ghostscript path. It usually in /usr/bin/gs for Linux or C:/Program Files/Ghostscript/bin/gswin32c.exe for Windows")
+            show_message(QMessageBox.Icon.Critical, "Specified path doesn't exists! Please provide valid Ghostscript path. It usually in /usr/bin/gs for Linux or C:/Program Files/Ghostscript/bin/gswin32c.exe for Windows")
             self.tabWidget.setCurrentIndex(self.tabWidget.indexOf(self.Settings))
             return False
         if "Ghostscript" in res.decode("utf-8"):
             return True
         # check again if ghostscript is found, otherwise turn exception
-        show_message(QMessageBox.Critical, "Invalid Ghostscript Binary! Please provide valid Ghostscript path. It usually in /usr/bin/gs for Linux or C:/Program Files/Ghostscript/bin/gswin32c.exe for Windows")
+        show_message(QMessageBox.Icon.Critical, "Invalid Ghostscript Binary! Please provide valid Ghostscript path. It usually in /usr/bin/gs for Linux or C:/Program Files/Ghostscript/bin/gswin32c.exe for Windows")
         self.tabWidget.setCurrentIndex(self.tabWidget.indexOf(self.Settings))
         return False
 
@@ -507,7 +506,7 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
             self.options.pngquant_path = self.field_pngquant_path.text()
 
         if self.options.pngquant_path == "":
-            show_message(QMessageBox.Critical, "Please set Pngquant path first. It usually in /usr/bin/pngquant for Linux")
+            show_message(QMessageBox.Icon.Critical, "Please set Pngquant path first. It usually in /usr/bin/pngquant for Linux")
             self.tabWidget.setCurrentIndex(self.tabWidget.indexOf(self.Settings))
             return False
         res = b""
@@ -519,13 +518,13 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
             else:
                 res = subprocess.check_output([self.options.pngquant_path, "--help"], stderr=subprocess.STDOUT)
         except FileNotFoundError:
-            show_message(QMessageBox.Critical, "Invalid Pngquant Binary! Please provide valid Pngquant path. It usually in /usr/bin/pngquant for Linux")
+            show_message(QMessageBox.Icon.Critical, "Invalid Pngquant Binary! Please provide valid Pngquant path. It usually in /usr/bin/pngquant for Linux")
             self.tabWiget.setCurrentIndex(self.tabWidget.indexOf(self.Settings))
             return False
         if "pngquant," in res.decode("utf-8"):
             return True
         # check again if pngquant is found, otherwise turn exception
-        show_message(QMessageBox.Critical, "Invalid Pngquant Binary! Please provide valid Pngquant path. It usually in /usr/bin/pngquant for Linux")
+        show_message(QMessageBox.Icon.Critical, "Invalid Pngquant Binary! Please provide valid Pngquant path. It usually in /usr/bin/pngquant for Linux")
         self.tabWiget.setCurrentIndex(self.tabWidget.indexOf(self.Settings))
         return False
 
@@ -536,10 +535,10 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
                   "Your destination folder is not empty when zip option selected. "+
                   "Citramanik will read all file in your destionation folder and zip them together. "+
                   "You can choose empty directory for zipping current export only. Export anyway?",
-                 QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-            if userchoice == QMessageBox.Yes:
+                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
+            if userchoice == QMessageBox.StandardButton.Yes:
                 return True
-            show_message(QMessageBox.Information, "Export aborted")
+            show_message(QMessageBox.Icon.Information, "Export aborted")
             return False
         return True
 
@@ -560,13 +559,13 @@ class CitramanikWindow(QMainWindow, Ui_Citramanik):
                 msg = f"{filename} was successfully exported as {export_formats} in {self.options.outputdir} in {elapsed_time}"
             else:
                 msg = f"{len(self.ids_to_process)} objects with pattern {self.options.pattern} was successfully exported as {export_formats} in {self.options.outputdir} in {elapsed_time}"
-            show_message(QMessageBox.Information, msg)
+            show_message(QMessageBox.Icon.Information, msg)
             return
         self.ourprogressbar.close()
         self.centralwidget.setEnabled(True)
         unexported = ", ".join(i for i,o in failedjobs)
         msg = f"Problem occured when exporting these object with id: {unexported}.\nFailed Jobs: {len(failedjobs)}\nTotal Process: {self.process_to_finished}\nSee citramanik.log in your output directory for details"
-        show_message(QMessageBox.Critical, msg, True)
+        show_message(QMessageBox.Icon.Critical, msg, True)
 
     def get_tmp_exportdir(self):
         ''' Get temporary directory path for exporting. It will be removed after exports. The prefix is CITRAMANIK_TEMP '''

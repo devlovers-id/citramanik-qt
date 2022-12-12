@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from citramanik.ui.citramanik_resources_rc import *
 
 class Ui_CitramanikProgressBar(object):
     def setupUi(self, CitramanikProgressBar):

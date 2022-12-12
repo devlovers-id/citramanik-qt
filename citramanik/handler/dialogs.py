@@ -10,7 +10,7 @@ def show_message(msg_type=QMessageBox.information, msg="Info", scrollable=False)
         box = ScrollableMessageBox(msg_type, "Report", msg)
     else:
         box = QMessageBox(msg_type, "Citramanik Notification", msg)
-    box.exec_()
+    box.exec()
 
 
 class ScrollableMessageBox(QMessageBox):

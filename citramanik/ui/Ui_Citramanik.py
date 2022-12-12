@@ -7,9 +7,13 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from citramanik.ui.citramanik_resources_rc import *
+from citramanik import get_versions, __donate_url__, __website_url__
 
 class Ui_Citramanik(object):
+
+    versions = get_versions()
+
     def setupUi(self, Citramanik):
         Citramanik.setObjectName("Citramanik")
         Citramanik.resize(480, 600)
@@ -686,7 +690,7 @@ class Ui_Citramanik(object):
         Citramanik.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Citramanik)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         self.combo_colorspace.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Citramanik)
 
@@ -745,12 +749,14 @@ class Ui_Citramanik(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'DejaVu Sans\';\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'DejaVu Sans\';\">We also added an export archive feature to help those of you who work on microstock or other design marketplaces.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'DejaVu Sans\';\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'DejaVu Sans\';\">Citramanik Version: CITRAMANIKRELEASEVERSION</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'DejaVu Sans\';\">Release Date: CITRAMANIKRELEASEDATE</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'DejaVu Sans\';\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'DejaVu Sans\';\">Details:<br /></span><a href=\"https://citramanik.dev-is.my.id\"><span style=\" font-family:\'DejaVu Sans\'; font-weight:600; text-decoration: underline; color:#353535;\">https://citramanik.dev-is.my.id</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'DejaVu Sans\';\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'DejaVu Sans\';\">Donation:<br /></span><a href=\"https://citramanik.dev-is.my.id\"><span style=\" font-family:\'DejaVu Sans\'; font-weight:600; text-decoration: underline; color:#353535;\">https://support.dev-is.my.id</span></a></p>\n"
+f"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Citramanik Version: {self.versions['citramanik']}</span></p>\n"
+f"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Release Date: {self.versions['release_date']}</span></p>\n"
+f"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Qt Version: {self.versions['qt_version']}</span></p>\n"
+f"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">System: {self.versions['system']} {self.versions['sysrelease']}</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p>\n"
+f"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Details:<br /></span><a href=\"{__website_url__}\"><span style=\" font-size:10pt; font-weight:600; text-decoration: underline; color:#353535;\">{__website_url__}</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p>\n"
+f"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Donation:<br /></span><a href=\"{__donate_url__}\"><span style=\" font-size:10pt; font-weight:600; text-decoration: underline; color:#353535;\">{__donate_url__}</span></a></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'DejaVu Sans\'; font-weight:600; text-decoration: underline; color:#353535;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'DejaVu Sans\';\">About Qt:<br /></span><a href=\"https://www.qt.io\"><span style=\" font-family:\'DejaVu Sans\'; font-weight:600; text-decoration: underline; color:#353535;\">https://www.qt.io</span></a></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'DejaVu Sans\'; font-weight:600; text-decoration: underline; color:#353535;\"><br /></p></body></html>"))
